@@ -4,13 +4,13 @@
  *  Created on: Oct 3, 2020
  *      Author: Shady
  */
-#include "stdtypes.h"
-#include "mathBit.h"
+#include "../stdtypes.h"
+#include "../mathBit.h"
 
-#include "DIO_int.h"
+#include "../DIO_DRIVER/DIO_int.h"
 
-#include "LED_cfg.h"
 #include "LED_priv.h"
+#include "LED_cfg.h"
 #include "LED_int.h"
 
 void LED_voidLedOn(u8 led)
