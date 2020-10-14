@@ -10,7 +10,7 @@
 
 
 #define LCD_MODE FOUR_BIT
-
+#define LCD_TAB 3
 #define RS_PIN PIN1
 #define EN_PIN PIN2
 #define RW_PIN PIN31

@@ -7,15 +7,6 @@
 
 #ifndef LED_CFG_H_
 #define LED_CFG_H_
-/* 
-#define LED_RED_INIT OFF
-#define LED_GREEN_INIT OFF
-#define LED_BLUE_INIT OFF
-
-#define LED_RED_DIR FORWORD
-#define LED_GREEN_DIR FORWORD
-#define LED_BLUE_DIR FORWORD */
-
 
 #define LED0_CONN FORWORD
 #define LED0_PIN PIN16

@@ -7,7 +7,7 @@
 
 #ifndef DIO_INT_H_
 #define DIO_INT_H_
-#include "stdtypes.h"
+#include "../../stdtypes.h"
 void DIO_voidSetPin(u8 pinNum, u8 value);
 u8 DIO_u8GetPin(u8 pinNum);
 void DIO_voidToggPin(u8 pinNum);

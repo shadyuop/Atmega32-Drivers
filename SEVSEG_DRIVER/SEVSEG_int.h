@@ -4,7 +4,8 @@
  *  Created on: Oct 9, 2020
  *      Author: Shady
  */
-#include "../stdtypes.h"
+#include "../../stdtypes.h"
+#include "../../mathBit.h"
 
 #ifndef SEVSEG_DRIVER_SEVSEG_INT_H_
 #define SEVSEG_DRIVER_SEVSEG_INT_H_

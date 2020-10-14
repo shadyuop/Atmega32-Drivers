@@ -5,8 +5,8 @@
  *      Author: Shady
  */
 
-#include "../stdtypes.h"
-#include "../mathBit.h"
+#include "../../stdtypes.h"
+#include "../../mathBit.h"
 
 #include "../DIO_DRIVER/DIO_int.h"
 
@@ -24,7 +24,7 @@ void SEVSEG_voidDisplay(u8 digit, u8 segNum)
     {
         #if (SEVSEG0_CONN == COMMON_CATHOD)
         {
-            DIO_voidSetPin(SEVSEG0_ENABLE, HIGH); /* Should be low, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG0_ENABLE, 1);
             switch (digit)
             {
             case 0:
@@ -122,9 +122,9 @@ void SEVSEG_voidDisplay(u8 digit, u8 segNum)
             }
         } 
 
-        #elif (SEVSEG0_CONN == COMMON_ANNOD) 
+        #elif (SEVSEG0_CONN == COMMON_CATHOD)
         {
-            DIO_voidSetPin(SEVSEG0_ENABLE, LOW);/* Should be high, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG0_ENABLE, 0);
             switch (digit)
             {
             case 0:
@@ -227,7 +227,7 @@ void SEVSEG_voidDisplay(u8 digit, u8 segNum)
     {
         #if (SEVSEG1_CONN == COMMON_CATHOD)
         {
-            DIO_voidSetPin(SEVSEG1_ENABLE, HIGH); /* Should be low, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG1_ENABLE, 1);
             switch (digit)
             {
             case 0:
@@ -325,9 +325,9 @@ void SEVSEG_voidDisplay(u8 digit, u8 segNum)
             }
         } 
 
-        #elif (SEVSEG1_CONN == COMMON_ANNOD)
+        #elif (SEVSEG1_CONN == COMMON_CATHOD)
         {
-            DIO_voidSetPin(SEVSEG1_ENABLE, LOW);/* Should be high, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG1_ENABLE, 0);
             switch (digit)
             {
             case 0:
@@ -434,23 +434,23 @@ void SEVSEG_voidEnable(u8 segNum)
     {
         #if (SEVSEG0_CONN == COMMON_CATHOD)
         {
-            DIO_voidSetPin(SEVSEG0_ENABLE,HIGH); /* Should be low, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG0_ENABLE,LOW);
         }
         #else
         {
-            DIO_voidSetPin(SEVSEG0_ENABLE, LOW); /* Should be HIGH, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG0_ENABLE, HIGH);
         }
         #endif
     }
     else
     {
-        #if (SEVSEG1_CONN == COMMON_CATHOD) 
+        #if (SEVSEG1_CONN == COMMON_CATHOD)
         {
-            DIO_voidSetPin(SEVSEG1_ENABLE,HIGH); /* Should be low, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG1_ENABLE,LOW);
         }
         #else
         {
-            DIO_voidSetPin(SEVSEG1_ENABLE, LOW); /* Should be HIGH, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG1_ENABLE, HIGH);
         }
         #endif
     }
@@ -463,11 +463,11 @@ void SEVSEG_voidDisable(u8 segNum)
     {
         #if (SEVSEG0_CONN == COMMON_CATHOD)
         {
-            DIO_voidSetPin(SEVSEG0_ENABLE, LOW); /* Should be HIGH, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG0_ENABLE, LOW);
         }
         #else
         {
-            DIO_voidSetPin(SEVSEG0_ENABLE, HIGH); /* Should be low, but Enable is Not-ted in my kit */
+            DIO_voidSetPin(SEVSEG0_ENABLE, HIGH);
         }
         #endif
     }

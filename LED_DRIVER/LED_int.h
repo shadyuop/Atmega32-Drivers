@@ -7,7 +7,8 @@
 
 #ifndef LED_INT_H_
 #define LED_INT_H_
-#include "stdtypes.h"
+#include "../../stdtypes.h"
+#include "../../mathBit.h"
 /* LED FUNTCTIONS */
 void LED_voidInitialize();
 void LED_voidLedOn(u8 led);

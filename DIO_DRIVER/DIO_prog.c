@@ -1,55 +1,54 @@
-#include "stdtypes.h"
-#include "mathBit.h"
+#include "../../stdtypes.h"
+#include "../../mathBit.h"
 
 #include <avr/io.h>
 // #include <avr/iom16.h>
-
 
 #include "DIO_priv.h"
 #include "DIO_cfg.h"
 #include "DIO_int.h"
 
-volatile u8 * DIO_portSelector(u8 pinNum)
+volatile u8 *DIO_portSelector(u8 pinNum)
 {
     u8 selector = pinNum / 8;
-    volatile u8 * port;
+    volatile u8 *port;
     switch (selector)
     {
     case 1:
-        port =  &PORTB;
+        port = &PORTB;
         break;
     case 2:
-        port =  &PORTC;
+        port = &PORTC;
         break;
     case 3:
-        port =  &PORTD;
+        port = &PORTD;
         break;
-    
+
     default:
-        port =  &PORTA;
+        port = &PORTA;
         break;
     }
     return port;
 }
 
-volatile u8 * DIO_pinSelector(u8 pinNum)
+volatile u8 *DIO_pinSelector(u8 pinNum)
 {
     u8 selector = pinNum / 8;
-    volatile u8 * pin;
+    volatile u8 *pin;
     switch (selector)
     {
     case 1:
-        pin =  &PINB;
+        pin = &PINB;
         break;
     case 2:
-        pin =  &PINC;
+        pin = &PINC;
         break;
     case 3:
-        pin =  &PIND;
+        pin = &PIND;
         break;
-    
+
     default:
-        pin =  &PINA;
+        pin = &PINA;
         break;
     }
     return pin;
@@ -57,7 +56,7 @@ volatile u8 * DIO_pinSelector(u8 pinNum)
 
 void DIO_voidSetPin(u8 pinNum, u8 value)
 {
-    volatile u8 * port = DIO_portSelector(pinNum);
+    volatile u8 *port = DIO_portSelector(pinNum);
     if (value == HIGH)
         SET_BIT(*port, pinNum % 8);
     else
@@ -66,14 +65,17 @@ void DIO_voidSetPin(u8 pinNum, u8 value)
 
 u8 DIO_u8GetPin(u8 pinNum)
 {
-    volatile u8 * pin = DIO_pinSelector(pinNum);
-    return GET_BIT(*pin,pinNum%8);
+    volatile u8 *pin = DIO_pinSelector(pinNum);
+    if (GET_BIT(*pin, pinNum % 8))
+        return HIGH;
+    else
+        return LOW;
 }
 
 void DIO_voidToggPin(u8 pinNum)
 {
-    volatile u8 * port = DIO_portSelector(pinNum);
-    TOG_BIT(*port,pinNum%8);
+    volatile u8 *port = DIO_portSelector(pinNum);
+    TOG_BIT(*port, pinNum % 8);
 }
 
 void DIO_voidInitialize()

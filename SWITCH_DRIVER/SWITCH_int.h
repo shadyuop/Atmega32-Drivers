@@ -4,7 +4,8 @@
  *  Created on: Oct 4, 2020
  *      Author: Shady
  */
-#include "../stdtypes.h"
+#include "../../stdtypes.h"
+#include "../../mathBit.h"
 #ifndef SWITCH_DRIVER_SWITCH_INT_H_
 #define SWITCH_DRIVER_SWITCH_INT_H_
 

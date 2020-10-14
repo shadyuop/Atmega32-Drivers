@@ -4,8 +4,8 @@
  *  Created on: Oct 3, 2020
  *      Author: Shady
  */
-#include "../stdtypes.h"
-#include "../mathBit.h"
+#include "../../stdtypes.h"
+#include "../../mathBit.h"
 
 #include "../DIO_DRIVER/DIO_int.h"
 
